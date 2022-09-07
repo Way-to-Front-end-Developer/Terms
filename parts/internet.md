@@ -29,9 +29,15 @@ Sources:
 https://www.cloudflare.com/en-gb/learning/ddos/glossary/hypertext-transfer-protocol-http/
 https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview
 
+### World Wide Web (Web, W3) 
+https://developer.mozilla.org/en-US/docs/Glossary/World_Wide_Web  
+
+**the Web** -  is an interconnected system of public webpages accessible through the Internet. 
+
 Browsers and how they work?
 
-A **web browser** is a software application that enables a user to access and display web pages or other online content through its graphical user interface.
+A **web browser** is a software application that enables a user to access and display web pages or other online content through its graphical user interface.  
+A Web browser or browser is a program that retrieves and displays pages from the Web, and lets users access further pages through hyperlinks. A browser is the most familiar type of user agent.
 
 **Веб-страница** — документ или информационный ресурс Всемирной паутины, доступ к которому осуществляется с помощью веб-браузера.  
 
@@ -67,3 +73,26 @@ https://web.dev/csp/
 OWASP Security Risks
 OWASP or Open Web Application Security Project is an online community that produces freely-available articles,
 methodologies, documentation, tools, and technologies in the field of web application security.
+
+### API  
+ 
+An API (Application Programming Interface) is a set of features and rules that exist inside a software  
+program (the application) enabling interaction with it through software - as opposed to a human user interface.  
+
+In Web development, an API is generally a set of code features (e.g. methods, properties, events, and URLs) that  
+a developer can use in their apps for interacting with components of a user's web browser, or other software/hardware  
+on the user's computer, or third party websites and services.
+
+### User agent  
+https://developer.mozilla.org/en-US/docs/Glossary/User_agent
+
+A user agent is a computer program representing a person, for example, a browser in a Web context.  
+Besides a browser, a user agent could be a bot scraping webpages, a download manager, or another app accessing the Web.
+
+
+### Hyperlink  
+https://developer.mozilla.org/en-US/docs/Glossary/Hyperlink
+
+Hyperlinks connect webpages or data items to one another.  
+In HTML, <a> elements define hyperlinks from a spot on a webpage (like a text string or image)  
+to another spot on some other webpage (or even on the same page).
