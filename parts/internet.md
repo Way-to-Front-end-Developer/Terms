@@ -31,7 +31,9 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview
 
 Browsers and how they work?
 
-A web browser is a software application that enables a user to access and display web pages or other online content through its graphical user interface.
+A **web browser** is a software application that enables a user to access and display web pages or other online content through its graphical user interface.
+
+**Веб-страница** — документ или информационный ресурс Всемирной паутины, доступ к которому осуществляется с помощью веб-браузера.  
 
 https://web.dev/howbrowserswork/
 
