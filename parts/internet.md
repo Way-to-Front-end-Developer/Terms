@@ -29,6 +29,15 @@ Sources:
 https://www.cloudflare.com/en-gb/learning/ddos/glossary/hypertext-transfer-protocol-http/
 https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview
 
+`Protocol`
+https://developer.mozilla.org/en-US/docs/Glossary/Protocol
+
+`Requests`
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods
+
+`Status`
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+
 ### World Wide Web (Web, W3) 
 https://developer.mozilla.org/en-US/docs/Glossary/World_Wide_Web  
 
@@ -96,3 +105,35 @@ https://developer.mozilla.org/en-US/docs/Glossary/Hyperlink
 `Hyperlinks` connect webpages or data items to one another.  
 In HTML, <a> elements define hyperlinks from a spot on a webpage (like a text string or image)  
 to another spot on some other webpage (or even on the same page).
+ 
+`interseprots`
+
+`идемпотентность` http https://developer.mozilla.org/ru/docs/Glossary/Idempotent
+ 
+`Web API`
+Для программирования на языке JavaScript понимать Web API не просто желательно, а обязательно. Сталкиваться с
+интерфейсом прикладного программирования (Application Programming Interfaces) в JS вы будете повсеместно.
+
+A`PI браузера` — это такие конструкции, которые встроены в браузер и предназначенные для облегчения разработки функциональности.
+Сторонние API — конструкции, встроенные в сторонние платформы, такие как Twitter, Zendesk, Trello и т. д.
+С их помощью функциональность этих платформ можно использовать в своих веб-приложениях. Если API в платформе предусмотрен,
+к нему обязательно прилагается инструкция.
+
+Broadly speaking, a worker is a script that runs on a thread separate to the browser’s main thread.
+https://bitsofco.de/web-workers-vs-service-workers-vs-worklets/
+
+`Service Worker API`
+https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API
+
+A `Service worker` is basically a script (JavaScript file) that runs in the background, separate from a web page and provides features that don't need a web page or user interaction. Some of the major features of service workers are Rich offline experiences(offline first web application development), periodic background syncs, push notifications, intercept and handle network requests and programmatically managing a cache of responses.
+
+`Web Workers API`
+https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
+
+`PWAs`
+`Progressive web applications` (`PWAs`) are a type of mobile app delivered through the web, built using common web technologies including HTML, CSS and JavaScript. These PWAs are deployed to servers, accessible through URLs, and indexed by search engines.
+ 
+ **The WebSocket API (WebSockets)**  
+https://learn.javascript.ru/websocket
+
+The `WebSocket API` is an advanced technology that makes it possible to open a two-way interactive communication session between the user's browser and a server. With this API, you can send messages to a server and receive event-driven responses without having to poll the server for a reply.  
