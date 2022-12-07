@@ -23,7 +23,37 @@ An HTTP request is the way internet communications platforms such as web browser
 Each HTTP request made across the Internet carries with it a series of encoded data that carries different types of information.
 A typical HTTP request contains:
 HTTP version type, a URL, an HTTP method, HTTP request headers, Optional HTTP body.
-https://webhamster.ru/mytetrashare/index/mtb339/1526829184r5da41sxmn
+https://webhamster.ru/mytetrashare/index/mtb339/1526829184r5da41sxmn  
+
+### HTTP caching
+
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching  
+https://devcenter.heroku.com/articles/increasing-application-performance-with-http-cache-headers  
+https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html
+
+The HTTP cache stores a response associated with a request and reuses the stored response for subsequent requests.   
+HTTP caching occurs when the browser stores local copies of web resources for faster retrieval the next time the resource is required.  
+`The goal of caching in HTTP`/1.1 is to eliminate the need to send requests in many cases, and to eliminate the need to send full responses in many other cases.   
+
+Стратегии кэширования
+`Cache only`  
+Одна из самых простых стратегий. Как можно догадаться из названия, все запросы отправляются в кэш.  
+Случаи использования - для получения доступа к статическим активам
+ 
+`Network only`  
+Клиент делает запрос, service worker перехватывает его и направляет в сеть.  
+Случаи использования - при отсутствии аналогов offline, например с analytics pings и запросами non-GET.
+ 
+`Cache falling back to network`  
+Service worker делает запрос в кэш, и при отсутствии ответа запрос отправляется в сеть.  
+Случаи использования - при разработке offline first приложения
+ 
+`Network falling back to cache`  
+Сначала service worker делает запрос к сети, и в случае успешного ответа он отправляется в кэш.  
+Случаи использования - При разработке часто меняющихся страниц, например: страницы для записей или таблицы участников игры. Идеально подойдет для случая, когда в приоритете последние добавленные данные.
+ 
+`Generic fallback (Резерв)`  
+Когда оба запроса дают сбой как к кэшу, так и к сети, отображается общий резерв вместо черного экрана или ошибки.
 
 Sources:
 https://www.cloudflare.com/en-gb/learning/ddos/glossary/hypertext-transfer-protocol-http/
@@ -70,9 +100,10 @@ https://developer.mozilla.org/en-US/docs/Glossary/URI
 `HTTPS` is a secure way to send data between a web server and a browser.
 https://www.cloudflare.com/en-gb/learning/ssl/what-is-https/
 
-`CORS` Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism that allows a server to indicate any origins
-(domain, scheme, or port) other than its own from which a browser should permit loading resources.
+### CORS
 https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
+
+`Cross-Origin Resource Sharing` `CORS` — механизм, использующий дополнительные HTTP-заголовки, чтобы дать возможность агенту пользователя получать разрешения на доступ к выбранным ресурсам с сервера на источнике (домене), отличном от того, что сайт использует в данный момент.
 
 Content Security Policy
 Content Security Policy is a computer security standard introduced to prevent cross-site scripting, clickjacking and
@@ -128,12 +159,74 @@ https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API
 A `Service worker` is basically a script (JavaScript file) that runs in the background, separate from a web page and provides features that don't need a web page or user interaction. Some of the major features of service workers are Rich offline experiences(offline first web application development), periodic background syncs, push notifications, intercept and handle network requests and programmatically managing a cache of responses.
 
 `Web Workers API`
-https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
+https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers   
+ 
+`Web Workers` это механизм, который позволяет скрипту выполняться в фоновом потоке, который отделен от основного потока веб-приложения. Преимущество заключается в том, что ресурсоёмкие вычисления могут выполняться в отдельном потоке, позволяя запустить основной (обычно пользовательский) поток без блокировки и замедления.  
+
+`Examples`: рендеринг трёхмерных сцен, шифрование, предварительная загрузка данных, проверка правописания.
+ 
+### Minification
+ 
+`Minification` — процесс, направленный на уменьшение размера исходного кода путём удаления ненужных символов без изменения его функциональности.
+
 
 `PWAs`
 `Progressive web applications` (`PWAs`) are a type of mobile app delivered through the web, built using common web technologies including HTML, CSS and JavaScript. These PWAs are deployed to servers, accessible through URLs, and indexed by search engines.
  
- **The WebSocket API (WebSockets)**  
+### Long polling
+`Long polling` – это самый простой способ поддерживать постоянное соединение с сервером, не используя при этом никаких специфических протоколов (типа WebSocket или Server Sent Events).
+ 
+ 
+### WebSocket & Server Sent Events  
 https://learn.javascript.ru/websocket
 
-The `WebSocket API` is an advanced technology that makes it possible to open a two-way interactive communication session between the user's browser and a server. With this API, you can send messages to a server and receive event-driven responses without having to poll the server for a reply.  
+Протокол `WebSocket`, обеспечивает возможность обмена данными между браузером и сервером через постоянное соединение. Данные передаются по нему в обоих направлениях в виде «пакетов», без разрыва соединения и дополнительных HTTP-запросов.  
+WebSocket особенно хорош для сервисов, которые нуждаются в постоянном обмене данными: онлайн игры, торговые площадки, работающие в реальном времени, и т.д.
+`Ping-pong` фреймы - используется для проверки соединения; отправляется с сервера, браузер реагирует на них автоматически.
+
+Спецификация `Server-Sent Events` описывает встроенный класс EventSource, который позволяет поддерживать соединение с сервером и получать от него события.
+ 
+| WebSocket                            | EventSource                                     | 
+| -------------------------------------| ------------------------------------------------| 
+| Двунаправленность: и сервер, и клиент|Однонаправленность: данные посылает только сервер|
+|могут обмениваться сообщениями        |                                                 | 
+| Бинарные и текстовые данные          | Только текст                                    | 
+| Протокол WebSocket                   | Протокол HTTP                                   | 
+ 
+ 
+### Throttling & debouncing
+
+`Throttling и debouncing` — это широко используемые техники для увеличения производительности кода, который выполняется повторно с некоторой периодичностью.
+
+`Throttling` функции означает, что функция вызывается не более одного раза в указанный период времени (например, раз в 10 секунд). Другими словами ― Throttling предотвращает запуск функции, если она уже запускалась недавно. Throttling также обеспечивает регулярность выполнение функции с заданной периодичностью.
+```
+ function throttle(cb, delay = 250) {
+  let shouldWait = false
+ 
+  return (...args) => {
+    if (shouldWait) return
+ 
+    cb(...args)
+    shouldWait = true
+    setTimeout(() => {
+      shouldWait = false
+    }, delay)
+  }
+}
+```
+ 
+`Debouncing` функции означает, что все вызовы будут игнорироваться до тех пор, пока они не прекратятся на определённый период времени. Только после этого функция будет вызвана.
+ 
+```
+function debounce(cb, delay = 250) {
+  let timeout
+ 
+  return (...args) => {
+    clearTimeout(timeout)
+    timeout = setTimeout(() => {
+      cb(...args)
+    }, delay)
+  }
+}
+```
+
