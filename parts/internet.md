@@ -145,7 +145,7 @@ to another spot on some other webpage (or even on the same page).
 Для программирования на языке JavaScript понимать Web API не просто желательно, а обязательно. Сталкиваться с
 интерфейсом прикладного программирования (Application Programming Interfaces) в JS вы будете повсеместно.
 
-A`PI браузера` — это такие конструкции, которые встроены в браузер и предназначенные для облегчения разработки функциональности.
+`API браузера` — это такие конструкции, которые встроены в браузер и предназначенные для облегчения разработки функциональности.
 Сторонние API — конструкции, встроенные в сторонние платформы, такие как Twitter, Zendesk, Trello и т. д.
 С их помощью функциональность этих платформ можно использовать в своих веб-приложениях. Если API в платформе предусмотрен,
 к нему обязательно прилагается инструкция.
@@ -159,7 +159,10 @@ https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API
 A `Service worker` is basically a script (JavaScript file) that runs in the background, separate from a web page and provides features that don't need a web page or user interaction. Some of the major features of service workers are Rich offline experiences(offline first web application development), periodic background syncs, push notifications, intercept and handle network requests and programmatically managing a cache of responses.
 
 `Web Workers API`
+ 
+src:  
 https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers   
+https://www.instagram.com/p/CeYlOLEj62-/
  
 `Web Workers` это механизм, который позволяет скрипту выполняться в фоновом потоке, который отделен от основного потока веб-приложения. Преимущество заключается в том, что ресурсоёмкие вычисления могут выполняться в отдельном потоке, позволяя запустить основной (обычно пользовательский) поток без блокировки и замедления.  
 
