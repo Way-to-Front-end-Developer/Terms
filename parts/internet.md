@@ -14,7 +14,10 @@ A uniform resource locator (URL), sometimes called a web address, contains the d
 
 `Hoisting` - Web hosting is an online service that allows you to publish your website files onto the internet. So, anyone who has access to the internet has access to your website.
 
-How does the internet work? https://developer.mozilla.org/en-US/docs/Learn/Common_questions/How_does_the_Internet_work
+### How does the internet work?   
+
+src:  
+https://developer.mozilla.org/en-US/docs/Learn/Common_questions/How_does_the_Internet_work
 
 `HTTP` is the TCP/IP based application layer communication protocol which standardizes how the client and server communicate with each other.
 It defines how the content is requested and transmitted across the internet.
@@ -84,7 +87,9 @@ https://web.dev/howbrowserswork/
 
 Веб-страница — документ или информационный ресурс Всемирной паутины, доступ к которому осуществляется с помощью веб-браузера.
 
-How does a brouser render a web page?
+### How does a brouser render a web page?
+
+src:  
 https://webdevblog.ru/kak-brauzer-renderit-veb-stranicu/ https://blog.logrocket.com/how-browser-rendering-works-behind-scenes/
 
 `URL`
